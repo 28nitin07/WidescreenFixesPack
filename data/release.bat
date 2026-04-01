@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 RD /S /Q ".\Archives"
 
 rem Embedding PDBs
-rem call EmbedPDB.bat
+call EmbedPDB.bat
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "Sign.ps1" ^
     -SearchPaths ".\*.asi .\data\MaxPayne.WidescreenFix\MSVCP60.dll" ^

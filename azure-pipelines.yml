@@ -31,7 +31,7 @@ jobs:
     inputs:
       script: |
         git submodule update --init --recursive
-        premake5.exe vs2022
+        premake5.exe vs2026
         ./before_build.bat
 
   - task: MSBuild@1

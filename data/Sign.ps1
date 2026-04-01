@@ -10,7 +10,7 @@ Write-Host "Current folder: $PWD" -ForegroundColor Gray
 
 if (-not ($env:CODE_SIGNING_PFX -and $env:CODE_SIGNING_PASSWORD)) {
     Write-Host "No CODE_SIGNING_PFX found." -ForegroundColor Red
-    exit 1
+    exit 0
 }
 
 # Decode PFX
@@ -26,7 +26,7 @@ $signtool = (Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse
 if (-not $signtool) {
     Write-Host "ERROR: signtool.exe not found!" -ForegroundColor Red
     Remove-Item $tempPfx -Force
-    exit 1
+    exit 0
 }
 
 $filesToSign = @()

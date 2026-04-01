@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 RD /S /Q ".\Archives"
 
 rem Embedding PDBs
-call EmbedPDB.bat
+rem call EmbedPDB.bat
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "Sign.ps1" ^
     -SearchPaths ".\*.asi .\data\MaxPayne.WidescreenFix\MSVCP60.dll" ^
@@ -11,7 +11,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "Sign.ps1" ^
 
 if %errorlevel% neq 0 (
     echo ERROR: Signing failed!
-    pause
     exit /b 1
 )
 

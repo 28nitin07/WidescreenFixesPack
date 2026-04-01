@@ -17,7 +17,7 @@ pr:
 jobs:
 - job:
   pool:
-    vmImage: windows-latest
+    vmImage: windows-2025-vs2026
   strategy:
     matrix:
       Release:
@@ -36,5 +36,5 @@ jobs:
 
   - task: MSBuild@1
     inputs:
-      solution: 'build/*.sln'
+      solution: 'build/*.slnx'
       maximumCpuCount: true
